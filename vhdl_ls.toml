@@ -1,0 +1,12 @@
+# File names are either absolute or relative to the parent folder of the
+# vhdl_ls.toml file and supports glob-style patterns.
+[libraries]
+lib2.files = [
+    '../src/**/*.vhd',
+    #'src_tb/**/*.vhd',
+    'src_qtb/**/*.vhd'
+]
+vunit_lib.files = [
+    #'C:\Users\Michael.Grill\AppData\Local\Programs\Python\Python39\Lib\site-packages\vunit\vhdl/**/*.vhd',
+    'C:\Users\Andreas.Schroeder\AppData\Local\Programs\Python\Python39\Lib\site-packages\vunit\vhdl/**/*.vhd'
+]

@@ -2,14 +2,12 @@
 --! @file	Ads1018SequencerQualification_TB.vhd 
 --! @brief	Testbench for the module Ads1018Sequencer.vhd.
    	    
---! @copyright 2020 Avionik Straubing Entwicklungs GmbH
 --! @version Version 1.0, Platform: Quartus 19.0.0
 
 --! | Attribute | Value |
 --! | :-- | :-- |
 --! | Subversion revision | $Rev:$ |
 --! | Time of last change | $Date:$ |
---! | Author(s) | @author Andreas Schroeder |
 
 ----------------------------------------------------------------------------------------
 

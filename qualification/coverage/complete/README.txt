@@ -1,0 +1,1 @@
+This file motivates GIT to keep the folder. Can be removed when content ist present.

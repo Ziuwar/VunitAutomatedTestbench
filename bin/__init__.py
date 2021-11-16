@@ -2,8 +2,8 @@
 # @file	__init__.py
 # @brief	Vunit python script init file. Automates the EDC VHDL Testbench execution.
 #
-# @copyright 2020 Avionik Straubing Entwicklungs GmbH
-# @version Version X.X.X, Platform: Python 3.8
+# @copyright 2021 Avionik Straubing Entwicklungs GmbH
+# @version Version 1.0.0, Platform: Python 3.9
 #
 # | Attribute | Value |
 # | :-- | :-- |
@@ -12,6 +12,7 @@
 # | Author(s) | @author Andreas Schroeder |
 #
 # history 20201116_1700 : Initial Release, NOT tested,  (AS)
+# history 20211116_1400 : Release 1.0.0, Tested  (AS)
 ###############################################################################
 
 from bin.post_run import merge_cover
@@ -34,5 +35,12 @@ from bin.paths import modelsim_do_file_path
 from bin.paths import testbench_results_path
 from bin.paths import gtkwave_dir
 from bin.paths import doxyfile_path
+from bin.paths import doxygen_log
+from bin.paths import gtkwave_log
+from bin.paths import vcd_log
+from bin.paths import vcover_log
+from bin.paths import merge_log
 
 from bin.vunit_init import modelsim_config
+
+from bin.logger import text_to_file

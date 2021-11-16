@@ -2,8 +2,8 @@
 # @file	run_qtb.py
 # @brief	Vunit python script. Automates the EDC VHDL Testbench execution.
 #
-# @copyright 2020 Avionik Straubing Entwicklungs GmbH
-# @version Version X.X.X, Platform: Python 3.8
+# @copyright 2021 Avionik Straubing Entwicklungs GmbH
+# @version Version 1.0.0, Platform: Python 3.9
 #
 # | Attribute | Value |
 # | :-- | :-- |
@@ -12,6 +12,7 @@
 # | Author(s) | @author Andreas Schroeder |
 #
 # history 20201116_1700 : Initial Release, NOT tested,  (AS)
+# history 20211116_1400 : Release 1.0.0, Tested  (AS)
 ###############################################################################
 
 from vunit import VUnit
@@ -44,9 +45,9 @@ def main():
         # Generate screenshots using gtkwave and tcl files for setup
         lib.generate_screenshots(root, lib.waveforms_path(testbench_directory), lib.gtkwave_dir(), results)
         # Doxygen html and pdf report generation 
-        print(lib.doxygen_report(root, lib.testbench_dir(testbench_directory), lib.doxyfile_path()))
+        lib.doxygen_report(root, lib.testbench_dir(testbench_directory),lib.doxyfile_path())
         #Final Message
-        print("!!Testbench execution done!!")
+        print("\nTestbench execution done!")
 
     # Configure ModelSim
     lib.modelsim_config(qtb, root, implementation_source, testbench_directory, testbench_source)
@@ -62,17 +63,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-# GenericToBePastToDut1 = [640, 480]
-# GenericToBePastToDut2 = [1920, 1080]
-# EncodedGenericToBePastToDut1 = ", ".join(map(str, GenericToBePastToDut1)) # build string to pass it to the VHDL testbench
-# EncodedGenericToBePastToDut2 = ", ".join(map(str, GenericToBePastToDut2)) # build string to pass it to the VHDL testbench
-
-# testbench = qtb_lib.test_bench("e_Dut_tb")
-# testcase_1 = testbench.test("Testcase_1")
-
-# generics = dict(EncodedGenericToBePastToDut=EncodedGenericToBePastToDut1)
-# generics2 =dict(EncodedGenericToBePastToDut=EncodedGenericToBePastToDut2)
-# testcase_1.add_config(name='Config1', generics=generics)
-# testcase_1.add_config(name='Config2', generics=generics2)

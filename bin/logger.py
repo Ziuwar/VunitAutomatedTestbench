@@ -2,8 +2,8 @@
 # @file	logger.py
 # @brief	Logger functions python script.
 #
-# @copyright 2020 Avionik Straubing Entwicklungs GmbH
-# @version Version X.X.X, Platform: Python 3.9.2
+# @copyright 2021 Avionik Straubing Entwicklungs GmbH
+# @version Version 1.0.0, Platform: Python 3.9.2
 #
 # | Attribute | Value |
 # | :-- | :-- |
@@ -11,7 +11,8 @@
 # | Time of last change | $Date:$ |
 # | Author(s) | @author Andreas Schroeder |
 #
-# history 20211109_1600 : Initial Release, NOT tested,  (AS)
+# history 20201116_1700 : Initial Release, NOT tested,  (AS)
+# history 20211116_1400 : Release 1.0.0, Tested  (AS)
 ###############################################################################
 
 from os import mkdir
@@ -29,3 +30,27 @@ def make_dir(dir):
                 return "An error occurred while creating the directory: %s" % (e)
     else:
         return "Error: Enter the name of a directory."
+
+def text_to_file(file, text, mode):
+    # Write in the text in the specified file.
+    if text:
+        try:
+            imp_source = open(file, mode)
+        except Exception as e:
+            return "An error occurred while opening the file: %s" % (e)
+        try:
+            imp_source.write(text)
+        except Exception as e:
+            return "An error occurred while writing the text: %s" % (e)
+        imp_source.close()
+        return "The content was written. No Errors occurred."
+    else:
+        return "Nothing text to write. No Changes."
+
+
+def write_log_entry():
+    return
+
+
+
+

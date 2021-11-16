@@ -2,8 +2,8 @@
 # @file	paths.py
 # @brief	Vunit python script. Automates the EDC VHDL Testbench execution.
 #
-# @copyright 2020 Avionik Straubing Entwicklungs GmbH
-# @version Version X.X.X, Platform: Python 3.8
+# @copyright 2021 Avionik Straubing Entwicklungs GmbH
+# @version Version 1.0.0, Platform: Python 3.9
 #
 # | Attribute | Value |
 # | :-- | :-- |
@@ -12,6 +12,7 @@
 # | Author(s) | @author Andreas Schroeder |
 #
 # history 20201116_1700 : Initial Release, NOT tested,  (AS)
+# history 20211116_1400 : Release 1.0.0, Tested  (AS)
 ###############################################################################
 
 # Implementation, testbench and testbench source paths
@@ -67,3 +68,38 @@ def doxyfile_path():
     doxyfile_subfolder = 'doxygen_report'
     doxyfile_name = 'Doxyfile'
     return ".\\" + doxyfile_subfolder + "\\" + doxyfile_name # Function doxygen_report() report changes the root folder to the TB directory 
+
+# Log file paths - DoxyGen log
+def doxygen_log():
+    log_name = "doxygen_log.txt"
+    logs_subfolder = "logs"
+    write_mode = "w"
+    return ["./" + logs_subfolder + "/" + log_name, write_mode]
+
+# Log file paths - GtkWave log
+def gtkwave_log():
+    log_name = "gtkwave_log.txt"
+    logs_subfolder = "logs"
+    write_mode = "a"
+    return ["../../" + logs_subfolder + "/" + log_name, write_mode]
+
+# Log file paths - Vcd generation log
+def vcd_log():
+    log_name = "vcd_log.txt"
+    logs_subfolder = "logs"
+    write_mode = "w"
+    return ["./" + logs_subfolder + "/" + log_name, write_mode]
+
+# Log file paths - Vcover log
+def vcover_log():
+    log_name = "vcover_log.txt"
+    logs_subfolder = "logs"
+    write_mode = "w"
+    return ["./" + logs_subfolder + "/" + log_name, write_mode]
+
+# Log file paths - Coverage merge log
+def merge_log():
+    log_name = "coverage_merge_log.txt"
+    logs_subfolder = "logs"
+    write_mode = "w"
+    return ["./" + logs_subfolder + "/" + log_name, write_mode]

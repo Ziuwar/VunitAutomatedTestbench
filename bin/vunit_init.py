@@ -2,8 +2,8 @@
 # @file	vunit_init.py
 # @brief	Vunit python script. Automates the EDC VHDL Testbench execution.
 #
-# @copyright 2020 Avionik Straubing Entwicklungs GmbH
-# @version Version X.X.X, Platform: Python 3.8
+# @copyright 2021 Avionik Straubing Entwicklungs GmbH
+# @version Version 1.0.0, Platform: Python 3.9
 #
 # | Attribute | Value |
 # | :-- | :-- |
@@ -12,6 +12,7 @@
 # | Author(s) | @author Andreas Schroeder |
 #
 # history 20201116_1700 : Initial Release, NOT tested,  (AS)
+# history 20211116_1400 : Release 1.0.0, Tested  (AS)
 ###############################################################################
 
 from os.path import join

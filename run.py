@@ -22,12 +22,12 @@ import bin as lib
 def main():
 
     # >Implementation
-    implementation_source = 'src'
+    implementation_source = 'source'
     # >Testbench Directory
-    testbench_directory = 'qualification_tb'
+    testbench_directory = 'verification'
     # Testbench Subdirectory #
     # >>TB Source
-    testbench_source = 'src_qtb'
+    testbench_source = 'verification_source'
 
     # Create the vunit process from the command line arguments
     qtb = VUnit.from_argv()

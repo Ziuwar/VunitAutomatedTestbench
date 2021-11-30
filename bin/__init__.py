@@ -20,6 +20,7 @@ from bin.post_run import vcover_text_report
 from bin.post_run import wlf_to_vcd
 from bin.post_run import generate_screenshots
 from bin.post_run import doxygen_report
+from bin.post_run import post_run_features
 
 from bin.pre_run import find_results
 from bin.pre_run import remove_files

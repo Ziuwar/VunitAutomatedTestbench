@@ -22,6 +22,22 @@ import os
 import bin as lib
 
 ##### Function Definitions #####
+def post_run_features(qtb, results, root, directories, features):
+    if features["coverage"] == 1:
+        # Merges the coverage results
+        lib.merge_cover(lib.ucdb_merge_path(directories["testbench_directory"]), qtb, results)
+        # Creates the text coverage result report from the merged ucdb file
+        lib.vcover_text_report(lib.coverage_report_path(directories["testbench_directory"]), lib.ucdb_merge_path(directories["testbench_directory"]))
+    if features["screenshots"] == 1:
+        # Generates vcd files from ModelSims wlf file format. WARNING: 3 seconds of data require approx. 500 MB of hard disk space (1 ns resolution).
+        lib.wlf_to_vcd(results,lib.vcd_files_path(directories["testbench_directory"]))
+        # Generate screenshots using gtkwave and tcl files for setup
+        lib.generate_screenshots(root, lib.waveforms_path(directories["testbench_directory"]), lib.gtkwave_dir(), results)
+    if features["doxygen"] == 1:
+        # Doxygen html and pdf report generation 
+        lib.doxygen_report(root, lib.testbench_dir(directories["testbench_directory"]),lib.doxyfile_path())
+    return "\nTestbench execution done!"
+
 def post_run_blacklist(test_name):
     blacklist_dict = { # Return dictionary for blacklist tests: 0 -> Test on blacklist, 1 -> Test NOT blacklisted
         "wlf_to_vcd": 1,

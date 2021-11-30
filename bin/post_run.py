@@ -133,6 +133,7 @@ def wlf_to_vcd(results, path_vcd):
 
 # Generate screenshots with gtkwave tcl files, files in subfolder waveforms are parsed
 def generate_screenshots(root_dir, waveform_dir, gtkwave_dir, results):
+    gtkwave_out = ""
     try:
         report = results.get_report()   # Only passed tests shall be evaluated
         os.chdir(waveform_dir)          # Change directory to execute gtkwave in the this directory
@@ -142,16 +143,16 @@ def generate_screenshots(root_dir, waveform_dir, gtkwave_dir, results):
             if item.status == 'passed' and test_bl.get("screenshot") == 1:  # Check if the status of the test was passed.
                 if glob.glob(key + '.tcl'):     # Check if the tcl file can be found
                     gtkwave_command = gtkwave_dir + 'gtkwave.exe -T ' + key +'.tcl'
-                    gtkwave_out = check_output(gtkwave_command, stderr = STDOUT) # Execute the gtkwave call command
+                    gtkwave_out += check_output(gtkwave_command, stderr = STDOUT).decode() # Execute the gtkwave call command
                 else:
-                    print('\nNo screenshot created for file ' + key + ', tcl file not found.\n')
+                    gtkwave_out += '\nNo screenshot created for file ' + key + ', tcl file not found.\n'
             elif item.status != 'passed':
-                print('\nNo screenshot created for file ' + key + ', the testrun failed.\n')
+                gtkwave_out += '\nNo screenshot created for file ' + key + ', the testrun failed.\n'
             elif test_bl.get("screenshot") == 0:
-                print('\nNo screenshot created for file ' + key + ', the test was blacklisted.\n')
+                gtkwave_out += '\nNo screenshot created for file ' + key + ', the test was blacklisted.\n'
             else:
-                print('\nAn unknown error orrcured in test '+ key + '\n')
-            lib.text_to_file(lib.gtkwave_log()[0], gtkwave_out.decode(), lib.gtkwave_log()[1])
+                gtkwave_out += '\nAn unknown error orrcured in test '+ key + '\n'
+            lib.text_to_file(lib.gtkwave_log()[0], gtkwave_out, lib.gtkwave_log()[1])
         os.chdir(root_dir)  # Change the folder back to run.py root
         print("Screenshot generation done!")
     except Exception as e:

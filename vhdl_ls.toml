@@ -2,8 +2,8 @@
 # vhdl_ls.toml file and supports glob-style patterns.
 [libraries]
 lib2.files = [
-    'src/**/*.vhd',
-    'qualification_tb/src_qtb/**/*.vhd'
+    'source/**/*.vhd',
+    'verification/verification_source/**/*.vhd'
 ]
 vunit_lib.files = [
     'C:\Users\Andreas.Schroeder\AppData\Local\Programs\Python\Python39\Lib\site-packages\vunit\vhdl/**/*.vhd'

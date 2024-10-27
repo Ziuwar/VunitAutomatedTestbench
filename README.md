@@ -8,5 +8,3 @@ Mature features implemented:
 
 To-do:
 - Log cleanup
-
-[VATS_Handbook.docx](https://github.com/Ziuwar/VunitAutomatedTestbench/files/7547034/VATS_Handbook.docx)

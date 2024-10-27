@@ -6,5 +6,5 @@ lib2.files = [
     'verification/verification_source/**/*.vhd'
 ]
 vunit_lib.files = [
-    'C:\Users\Andreas.Schroeder\AppData\Local\Programs\Python\Python39\Lib\site-packages\vunit\vhdl/**/*.vhd'
+    'C:\Users\Ziuwar\AppData\Local\Programs\Python\Python39\Lib\site-packages\vunit\vhdl/**/*.vhd'
 ]

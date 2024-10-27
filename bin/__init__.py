@@ -2,14 +2,14 @@
 # @file	__init__.py
 # @brief	Vunit python script init file. Automates the EDC VHDL Testbench execution.
 #
-# @copyright 2021 Avionik Straubing Entwicklungs GmbH
+# @copyright 2021
 # @version Version 1.0.0, Platform: Python 3.9
 #
 # | Attribute | Value |
 # | :-- | :-- |
 # | Subversion revision | $Rev:$ |
 # | Time of last change | $Date:$ |
-# | Author(s) | @author Andreas Schroeder |
+# | Author(s) | @author Ziuwar |
 #
 # history 20201116_1700 : Initial Release, NOT tested,  (AS)
 # history 20211116_1400 : Release 1.0.0, Tested  (AS)
